@@ -1,7 +1,12 @@
 var ul = document.getElementById("ul");
 var todoInput = document.getElementById("todoInput");
 var btn = document.getElementById("btn");
+var dAllBtn = document.getElementById("d-all");
 var targetId = undefined;
+
+if (ul.children.length == 0) {
+  dAllBtn.disabled = true;
+}
 
 function deleteItem(id) {
   // console.log("Li Id: ", id);
@@ -74,6 +79,11 @@ function addItem() {
 
   ul.appendChild(li);
   todoInput.value = "";
+
+  dAllBtn.disabled = false;
 }
 
-// console.log(document.children[0]);
+function deleteAll() {
+  ul.innerHTML = "";
+  dAllBtn.disabled = true;
+}
