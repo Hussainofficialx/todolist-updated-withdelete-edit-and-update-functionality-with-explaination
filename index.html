@@ -1,16 +1,22 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> JS World </title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
 </head>
+
 <body>
-    <h1>Todo List App JS</h1>
-    <input type="text" placeholder="Write Something" id="todoInput" autofocus>
-    <button onclick="addItem()">Add Item</button>
-    <ul id="ul">
-    </ul>
-    <script src="logic.js"></script>
+    <h1> Todo List App JS </h1>
+    <input type="text" placeholder="Write Something" id="todoInput" autofocus />
+    <button id="btn" onclick="addItem()"> Add Item </button>
+    <!-- <button id="d-all" onclick="deleteAll()"> Delete All </button> -->
+     <button id="discard" onclick="discardHandler()" style="display: none;"> Discard </button>
+
+    <ul id="ul"></ul>
+
+    <script src="./app.js"></script>
 </body>
+
 </html>
