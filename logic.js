@@ -1,12 +1,13 @@
 var ul = document.getElementById("ul");
 var todoInput = document.getElementById("todoInput");
 var btn = document.getElementById("btn");
-var dAllBtn = document.getElementById("d-all");
+// var dAllBtn = document.getElementById("d-all");
+var discardBtn = document.getElementById("discard");
 var targetId = undefined;
 
-if (ul.children.length == 0) {
-  dAllBtn.disabled = true;
-}
+// if (ul.children.length == 0) {
+//   dAllBtn.disabled = true;
+// }
 
 function deleteItem(id) {
   // console.log("Li Id: ", id);
@@ -33,6 +34,8 @@ function updateItem() {
 
 function editItem(id) {
   // console.log("Li Id: ", id);
+
+  discardBtn.style.display = "block";
 
   targetId = id;
 
@@ -80,10 +83,19 @@ function addItem() {
   ul.appendChild(li);
   todoInput.value = "";
 
-  dAllBtn.disabled = false;
+  // dAllBtn.disabled = false;
 }
 
-function deleteAll() {
-  ul.innerHTML = "";
-  dAllBtn.disabled = true;
+// function deleteAll() {
+//   ul.innerHTML = "";
+//   dAllBtn.disabled = true;
+// }
+
+function discardHandler() {
+  todoInput.value = "";
+  btn.removeAttribute("onclick");
+  btn.innerText = "Add Item";
+  btn.setAttribute("onclick", "addItem()");
+  targetId = undefined;
+  discardBtn.style.display = "none";
 }
